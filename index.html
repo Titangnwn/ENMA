@@ -1,123 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENMA APPAREL</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .hero-bg {
-      background-image: url(logo.png);
-      background-size: 900;
-      background-position: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enmma Apparrel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-purple-900 text-black-900">
-  <!-- Navbar -->
-  <header class="bg-purple-900 text-yellow-400 py-4">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <img src="logo.png" alt="Logo" class="h-10">
-        <h1 class="text-2xl font-bold">ENMA APPAREL</h1>
-      </div>
-      <nav class="space-x-6">
-        <a href="#products" class="hover:underline">Products</a>
-        <a href="#about" class="hover:underline">About</a>
-        <a href="#contact" class="hover:underline">Contact</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-gray-100">
 
-  <!-- Hero Section -->
-  <section class="hero-bg bg-purple-800 py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">Get the Best Sports Apparel</h2>
-      <p class="text-lg mb-6">High-quality, affordable, and stylish sportswear for everyone.</p>
-      <a href="#products" class="bg-violet-700 text-white px-6 py-3 rounded-lg hover:bg-blue-700">
-        Shop Now
+<!-- Navbar -->
+<nav class="bg-gray-900 text-white fixed top-0 w-full z-50">
+  <div class="container mx-auto flex items-center justify-between px-4 py-4">
+      <a class="flex items-center space-x-2" href="#">
+          <img src="logo.png" alt="Logo" class="h-10 w-10 object-cover">
+          <span class="text-lg font-bold">Enma Apparel</span>
       </a>
-    </div>
-  </section>
+      <ul class="flex space-x-6">
+          <li><a class="hover:text-gray-300" href="#products">Produk</a></li>
+          <li><a class="hover:text-gray-300" href="#home">Tentang</a></li>
+          <li><a class="hover:text-gray-300" href="#contact">Kontak</a></li>
+          <li><a class="hover:text-gray-300" href="login.html">login</a></li>
+      </ul>
+  </div>
+</nav>
 
-  <!-- Products Section -->
-  <section id="products" class="py-16">
-    <div class="container mx-auto">
-      <h3 class="text-3xl font-bold text-center mb-8">Our Products</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Product Card -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <img src="home.webp" alt="Product 1" class="w-full">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Baju Home Panser FC 24/25</h4>
-            <p class="text-gray-600 mt-2">Desain Dan Warna Elegan </p>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-blue-600 font-bold">Rp 95.000</span>
-              <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                <a href="panserhome.html" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Buy Now
-              </a>
-              </button>
+<!-- Add this padding to ensure the content doesn't go behind the navbar -->
+<div class="pt-20"></div>
+
+
+<style>
+  .carousel-item img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .carousel-button {
+    background-color: black !important;
+  }
+</style>
+
+<div id="default-carousel" class="relative w-full" data-carousel="slide">
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="duration-700 ease-in-out carousel-item" data-carousel-item>
+      <img src="logo.png" class="absolute block object-cover" alt="Logo Image">
+    </div>
+    <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item>
+      <img src="bandung.jpg" class="absolute block object-cover" alt="Bandung Image">
+    </div>
+    <div class="hidden duration-700 ease-in-out carousel-item" data-carousel-item>
+      <img src="ennma.png" class="absolute block object-cover" alt="Bola Image">
+    </div>
+  </div>
+
+  <!-- Slider indicators -->
+  <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+    <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+    <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+  </div>
+
+  <!-- Slider controls -->
+  <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+    <span class="carousel-button inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-black/50 group-focus:ring-4 group-focus:ring-white">
+      <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+      </svg>
+      <span class="sr-only">Previous</span>
+    </span>
+  </button>
+  <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+    <span class="carousel-button inline-flex items-center justify-center w-10 h-10 rounded-full group-hover:bg-black/50 group-focus:ring-4 group-focus:ring-white">
+      <svg class="w-4 h-4 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 9l4-4-4-4" />
+      </svg>
+      <span class="sr-only">Next</span>
+    </span>
+  </button>
+</div>
+
+
+<!-- Hero Section -->
+<section id="home" class="bg-gray-900 text-white py-20">
+  <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4 animate__animated animate__fadeInDown">Selamat Datang di Enma Apparel</h1>
+      <p class="text-lg mb-8 animate__animated animate__fadeInUp">Temukan jersey favorit Anda dengan kualitas terbaik dan harga terjangkau.</p>
+      <a href="#products" class="bg-blue-500 text-white px-6 py-3 rounded hover:bg-blue-600 animate__animated animate__pulse">Lihat Produk</a>
+  </div>
+  <div class="flex justify-center mt-10 space-x-4">
+      <img src="logo.png" alt="Logo" class="h-16 w-16 object-cover animate__animated animate__bounceIn">
+      <img src="enma.png" alt="Logo 2" class="h-16 w-16 object-cover animate__animated animate__bounceIn animate__delay-1s">
+      <img src="logo.png" alt="Logo 3" class="h-16 w-16 object-cover animate__animated animate__bounceIn animate__delay-2s">
+  </div>
+</section>
+
+<!-- Include animate.css library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+
+<!-- Daftar Produk -->
+<section id="products" class="py-10">
+    <div class="container mx-auto px-4">
+        <h2 class="text-center text-2xl font-bold mb-8">Daftar Produk</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Produk 1 -->
+            <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+                <img src="home.webp" alt="Jersey 1" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Jersey Panser Home 24/25</h5>
+                    <p class="text-gray-600">Rp 200.000</p>
+                    <a href="panserhome.html.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+                </div>
             </div>
-          </div>
-        </div>
-        <!-- Repeat for other products -->
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <img src="away.webp" alt="Product 2" class="w-full">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">Baju Away Panser FC 24/25</h4>
-            <p class="text-gray-600 mt-2">Warna Terang Dengan Motif Menarik .</p>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-blue-600 font-bold">Rp 95.000</span>
-              <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                <a href="panseraway.html" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Buy Now
-              </a>
-              </button>
+            <!-- Produk 2 -->
+            <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+                <img src="away.webp" alt="Jersey 2" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
+                    <p class="text-gray-600">Rp 250.000</p>
+                    <a href="panseraway.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="bg-white shadow-md rounded-lg overflow-hidden">
-          <img src="custom.jpg" alt="Product 3" class="w-full">
-          <div class="p-4">
-            <h4 class="font-bold text-lg">custom Jersey Satuan</h4>
-            <p class="text-gray-600 mt-2">Desain Sebebas Mu,Ada pun contoh Desain Dari Kami.</p>
-            <div class="flex justify-between items-center mt-4">
-              <span class="text-blue-600 font-bold">Rp 125.000</span>
-              <button class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                <a href="costme.html" class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                Buy Now
-                </a>
-              </button>
+            <!-- Produk 3 -->
+            <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+                <img src="custom.jpg" alt="Jersey 3" class="w-full h-48 object-cover">
+                <div class="p-4 text-center">
+                    <h5 class="text-lg font-semibold">Kreasikan jersey mu</h5>
+                    <p class="text-gray-600">Rp 125.000</p>
+                    <a href="costme.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+                </div>
             </div>
+            <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+              <img src="jersey1.jpg" alt="Jersey 2"  class="w-full h-78 object-cover">
+              <div class="p-4 text-center">
+                  <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
+                  <p class="text-gray-600">Rp 250.000</p>
+                  <a href="panseraway.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+              </div>
           </div>
+          <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+            <img src="jersey 2.jpg" alt="Jersey 2" class="w-full h-78 object-cover">
+            <div class="p-4 text-center">
+                <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
+                <p class="text-gray-600">Rp 250.000</p>
+                <a href="panseraway.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+            </div>
         </div>
+        <div class="bg-white shadow-md rounded-md overflow-hidden hover:scale-105 transition-transform">
+          <img src="jersey 3.png" alt="Jersey 2"  class="w-full h-78 object-cover">
+          <div class="p-4 text-center">
+              <h5 class="text-lg font-semibold">Jersey Panser Away 24/25</h5>
+              <p class="text-gray-600">Rp 250.000</p>
+              <a href="panseraway.html" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 inline-block">Beli Sekarang</a>
+          </div>
       </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- About Section -->
-  <section id="about" class="about-bg bg-purple-800 py-16">
-    <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">About Us</h3>
-      <p class="text-black">Tempat Bikin Baju Olahraga Yang Berletak Di BANDUNG JAWA BARAT,Bisa Desain Satuan Maupun Lusinan.</p>
-    </div>
-  </section>
+<!-- Kontak Section -->
+<section id="contact" class="py-10 bg-white">
+  <div class="container mx-auto px-4">
+      <h2 class="text-center text-2xl font-bold mb-8">Kontak Kami</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <img src="Ig.png" alt="Instagram" class="w-12 h-12 mb-4">
+              <h3 class="text-lg font-semibold">Instagram</h3>
+              <p>@enma.Apparel</p>
+              <a href="https://www.instagram.com/enma.apparel?igsh=MTh6Nnp5bTJ5ZzQxdw==" class="text-blue-500 mt-2">Follow Kami</a>
+          </div>
+          <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <img src="wa.png" alt="WhatsApp" class="w-12 h-12 mb-4">
+              <h3 class="text-lg font-semibold">WhatsApp</h3>
+              <p>-</p>
+              <a href="hhtps" class="text-green-500 mt-2">Chat Kami</a>
+          </div>
+          <div class="flex flex-col items-center text-center bg-gray-100 p-6 rounded-lg shadow-md">
+              <img src="email.jpeg" alt="Email" class="w-12 h-12 mb-4">
+              <h3 class="text-lg font-semibold">Email</h3>
+              <p>enmaapparel@gmail.com</p>
+              <a href="mailto:contact@enma-apparel.com" class="text-red-500 mt-2">Email Kami</a>
+          </div>
+      </div>
+  </div>
+</section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-16">
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-4">
     <div class="container mx-auto text-center">
-      <h3 class="text-3xl font-bold mb-4">Contact Us</h3>
-      <p class="text-black-700">Have questions? Reach out to us at <a href="mailto:enmaapparel@gmail.com" class="text-blue-600 underline">enmaapparel@gmail.com</a>.</p>
-      <p class="text-black-700">Other? <a href="https://www.instagram.com/enma.apparel?igsh=MTh6Nnp5bTJ5ZzQxdw==" class="text-blue-600 underline">enma.apparel</a>.</p>
+        <p>&copy; 2025 Enmma Apparrel. All Rights Reserved.</p>
     </div>
-  </section>
+</footer>
 
-  <!-- Footer -->
-  <footer class="bg-purple-600 text-yellow-500 py-4">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2024 ENMA APPAREL. All Rights Reserved.</p>
-    </div>
-  </footer>
+<script src="https://unpkg.com/flowbite@1.6.5/dist/flowbite.min.js"></script>
 </body>
 </html>
